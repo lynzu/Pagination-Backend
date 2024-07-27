@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import database from './database.js';
 import MangaRouter from './routes/Manga.js';
 import MangaModel from './models/MangaModel.js';
@@ -9,9 +10,13 @@ import 'dotenv/config.js';
 const app = express();
 
 await database();
-//await MangaModel.deleteMany();
 
-app.use(express.json());
+if (process.env.NODE_ENV != 'production') {
+  
+await MangaModel.deleteMany();
+}
+
+app.use(bodyParser.json({ limit: '10mb' }));
 app.set('json spaces', 4);
 
 app.use(MangaRouter);
