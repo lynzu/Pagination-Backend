@@ -17,6 +17,7 @@ if (process.env.NODE_ENV != 'production') {
 
 app.use(bodyParser.json({ limit: '10mb' }));
 app.set('json spaces', 4);
+app.use(cors())
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
