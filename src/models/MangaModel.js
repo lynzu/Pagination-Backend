@@ -36,6 +36,6 @@ const mangaSchema = new mongoose.Schema({
 
 mangaSchema.plugin(mongooHidden(), {hidden: {_id:true, __v:true}});
 
-const Model = mongoose.model('MangaList-Test', mangaSchema);
+const Model = mongoose.model('MangaList', mangaSchema);
 
 export default Model;
