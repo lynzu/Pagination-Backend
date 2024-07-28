@@ -1,6 +1,11 @@
 import mongoose from 'mongoose';
+import mongooHidden from 'mongoose-hidden';
 
 const mangaSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    required: true
+  },
   title: {
     type: String,
     required: true
@@ -24,11 +29,13 @@ const mangaSchema = new mongoose.Schema({
     required: true
   },
   chapters: {
-    type: [{number: Number, url: [String]}],
+    type: [{ number: Number, url: [String] }],
     required: true
   }
 });
 
-const Model = mongoose.model('MangaList', mangaSchema);
+mangaSchema.plugin(mongooHidden(), {hidden: {_id:true, __v:true}});
+
+const Model = mongoose.model('MangaList-Test', mangaSchema);
 
 export default Model;

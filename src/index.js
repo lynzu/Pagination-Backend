@@ -12,19 +12,19 @@ const app = express();
 await database();
 
 if (process.env.NODE_ENV != 'production') {
-  await MangaModel.deleteMany();
+  //  await MangaModel.deleteMany();
 }
 
 app.use(bodyParser.json({ limit: '10mb' }));
 app.set('json spaces', 4);
-app.use(cors())
+app.use(cors());
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({status: false, message:'Something broke'});
+  res.status(500).json({ status: false, message: 'Something broken' });
 });
 
-app.use(MangaRouter);
+app.use('/manga',MangaRouter);
 
 app.get('/', (req, res) => res.json({ message: 'Hi' }));
 

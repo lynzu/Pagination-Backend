@@ -657,6 +657,13 @@ mongodb@6.7.0:
     bson "^6.7.0"
     mongodb-connection-string-url "^3.0.0"
 
+mongoose-hidden@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/mongoose-hidden/-/mongoose-hidden-1.9.1.tgz#d3355362a3ce1c891a4affe43782896a925e8a36"
+  integrity sha512-wi9oKsNl8jOE+J+J6ZCx6LSakplCy/FzEUyAagllpFex9ya5DuY9og7u2cIVl2dk6h6DvKKHMgh30GDt2PzjMA==
+  dependencies:
+    mpath "^0.8.0"
+
 mongoose@^8.5.1:
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-8.5.1.tgz#011192edf77af54dd0826a836459212da317c503"
@@ -674,6 +681,11 @@ mpath@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.9.0.tgz#0c122fe107846e31fc58c75b09c35514b3871904"
   integrity sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==
+
+mpath@^0.8.0:
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.8.4.tgz#6b566d9581621d9e931dd3b142ed3618e7599313"
+  integrity sha512-DTxNZomBcTWlrMW76jy1wvV37X/cNNxPW1y2Jzd4DZkAaC5ZGsm8bfGfNOthcDuRJujXLqiuS6o3Tpy0JEoh7g==
 
 mquery@5.0.0:
   version "5.0.0"

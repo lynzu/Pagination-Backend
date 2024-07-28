@@ -17,3 +17,10 @@ export const MangaUpload = (req, res, next) => {
   });
   ValidatorHandler(req, res, next, 'body', schema);
 };
+
+export const MangaSearch = (req, res, next) => {
+  const schema = Joi.object().keys({
+    id: Joi.number().required()
+  });
+  ValidatorHandler(req, res, next, 'query', schema);
+};
