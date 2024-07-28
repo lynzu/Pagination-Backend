@@ -12,12 +12,16 @@ const app = express();
 await database();
 
 if (process.env.NODE_ENV != 'production') {
-  
-await MangaModel.deleteMany();
+  await MangaModel.deleteMany();
 }
 
 app.use(bodyParser.json({ limit: '10mb' }));
 app.set('json spaces', 4);
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({status: false, message:'Something broke'});
+});
 
 app.use(MangaRouter);
 
